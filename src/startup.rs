@@ -6,7 +6,7 @@ use actix_web::dev::Server;
 use actix_web::middleware::Logger;
 use actix_web::{web, App, HttpServer};
 
-pub fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
+pub async fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
     let server = HttpServer::new(move || {
         App::new()
             .route("/", web::get().to(index))
