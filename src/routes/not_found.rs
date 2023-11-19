@@ -3,10 +3,10 @@ use askama::Template;
 
 #[derive(Template)]
 #[template(path = "not_found.html")]
-struct PageNotFoundTemplate{}
+struct PageNotFoundTemplate {}
 
 pub async fn not_found() -> impl Responder {
-    let template = PageNotFoundTemplate{};
+    let template = PageNotFoundTemplate {};
 
     HttpResponse::NotFound().body(template.render().unwrap())
 }
