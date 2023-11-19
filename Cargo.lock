@@ -120,22 +120,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "actix-starter"
-version = "0.1.0"
-dependencies = [
- "actix-web",
- "askama",
- "entity",
- "env_logger",
- "lexopt",
- "migration",
- "reqwest",
- "scraper",
- "sea-orm",
- "tokio",
-]
-
-[[package]]
 name = "actix-utils"
 version = "3.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2618,6 +2602,22 @@ dependencies = [
  "spki",
  "subtle",
  "zeroize",
+]
+
+[[package]]
+name = "rust-sandwiches"
+version = "0.1.0"
+dependencies = [
+ "actix-web",
+ "askama",
+ "entity",
+ "env_logger",
+ "lexopt",
+ "migration",
+ "reqwest",
+ "scraper",
+ "sea-orm",
+ "tokio",
 ]
 
 [[package]]

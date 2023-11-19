@@ -1,5 +1,5 @@
 [package]
-name = "actix-starter"
+name = "rust-sandwiches"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
@@ -11,7 +11,7 @@ path = "src/lib.rs"
 
 [[bin]]
 path = "src/main.rs"
-name = "actix_starter"
+name = "rust_sandwiches"
 
 [workspace]
 members = [".", "migration", "entity"]

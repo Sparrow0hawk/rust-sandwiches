@@ -10,7 +10,7 @@ pub async fn spawn_app() -> TestApp {
     let port = listener.local_addr().unwrap().port();
     let address = format!("http://127.0.0.1:{}", port);
 
-    let server = actix_starter::startup::run(listener)
+    let server = rust_sandwiches::startup::run(listener)
         .await
         .expect("Failed to bind address");
 
