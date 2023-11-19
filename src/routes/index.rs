@@ -9,7 +9,7 @@ struct IndexTemplate<'a> {
 
 pub async fn index() -> impl Responder {
     let template = IndexTemplate {
-        title: "Hello world!",
+        title: "Rust Sandwiches",
     };
 
     HttpResponse::Ok().body(template.render().unwrap())

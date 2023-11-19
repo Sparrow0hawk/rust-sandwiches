@@ -16,5 +16,5 @@ async fn test_index() {
 
     let page = fixtures::get_page_element(page_str, "h1");
 
-    assert_eq!(page, "Hello world!")
+    assert_eq!(page, "Rust Sandwiches")
 }
