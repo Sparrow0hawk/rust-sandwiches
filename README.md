@@ -46,3 +46,17 @@ To run locally:
    ```bash
    cargo test
    ```
+
+### Docker
+
+If you have Docker installed you can build the app with the following commands:
+
+1. Build the image
+   ```bash
+   docker build . -t rusty_sandwiches
+   ```
+
+2. Run the image
+   ```bash
+   docker run --rm -p 8080:8080 rusty_sandwiches:latest
+   ```
