@@ -4,4 +4,22 @@
 
 {% block content %}
 <h1>{{ title }}</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Sandwich</th>
+        <th>Count</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for sandwich in sandwiches %}
+    <tr>
+        <td>{{ sandwich.name }}</td>
+        <td>{{ sandwich.count }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}

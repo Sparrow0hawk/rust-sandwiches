@@ -8,6 +8,8 @@ Testing out template rendering and ORM tools with Actix-web.
 - [lexopt](https://docs.rs/lexopt/latest/lexopt/) for CLI interface
 - [Askama](https://docs.rs/askama/latest/askama/) for Jinja-like templating
 - GitHub actions that depend on https://github.com/dtolnay/rust-toolchain
+- [SeaORM](https://www.sea-ql.org/SeaORM/) for ORM, database operations, migrations
+- Sqlite, for database
 
 ## Usage
 

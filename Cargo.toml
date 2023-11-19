@@ -13,12 +13,17 @@ path = "src/lib.rs"
 path = "src/main.rs"
 name = "actix_starter"
 
+[workspace]
+members = [".", "migration", "entity"]
+
 [dependencies]
 actix-web = "4"
 askama = "0.12.1"
 env_logger = "0.10.1"
 lexopt = "0.3.0"
-
+sea-orm = { version = "0.12", features = [ "sqlx-sqlite", "runtime-tokio-native-tls", "macros" ] }
+entity = { path = "entity" }
+migration = { path = "migration" }
 
 [dev-dependencies]
 reqwest = { version = "0.11" }
