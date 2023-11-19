@@ -16,8 +16,8 @@ async fn test_page_not_found() {
 
     let page_str = &resp.text().await.unwrap();
 
-    let page = fixtures::get_page_element(page_str, "h1");
+    let index_page = fixtures::IndexPage::new(page_str);
 
-    assert_eq!(page, "Page not found");
+    assert_eq!(index_page.get_header(), "Page not found");
     assert_eq!(status, 404)
 }

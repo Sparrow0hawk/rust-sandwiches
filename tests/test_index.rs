@@ -14,7 +14,7 @@ async fn test_index() {
 
     let page_str = &resp.text().await.unwrap();
 
-    let page = fixtures::get_page_element(page_str, "h1");
+    let index_page = fixtures::IndexPage::new(page_str);
 
-    assert_eq!(page, "Rust Sandwiches")
+    assert_eq!(index_page.get_header(), "Rust Sandwiches")
 }
