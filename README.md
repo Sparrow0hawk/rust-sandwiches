@@ -1,11 +1,6 @@
-# Actix Web Starter Repo
+# Actix Web Sandwich Shop
 
-An basic actix web starter repository.
-
-## Basic configuration
-
-An actix-web application, with CLI interface to configure host and port. Includes a rough app structure that separates 
-tests from app code inspired by [zero-to-prod](https://github.com/LukeMathWalker/zero-to-production)
+Testing out template rendering and ORM tools with Actix-web.
 
 ### Main dependencies
 
