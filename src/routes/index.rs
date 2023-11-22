@@ -1,5 +1,5 @@
-use ::entity::sandwich;
-use ::entity::sandwich::{Entity as Sandwich, Model};
+use ::entity::sandwich::Model;
+use ::infrastructure::sandwiches_repository::SandwichRepository;
 use actix_web::{web, HttpResponse, Responder};
 use askama::Template;
 use sea_orm::*;
@@ -17,15 +17,4 @@ pub async fn index(data: web::Data<DatabaseConnection>) -> impl Responder {
     let template = IndexTemplate { title, sandwiches };
 
     HttpResponse::Ok().body(template.render().unwrap())
-}
-
-struct SandwichRepository;
-
-impl SandwichRepository {
-    pub async fn get_all(db: &DbConn) -> Vec<sandwich::Model> {
-        Sandwich::find()
-            .all(db)
-            .await
-            .expect("Unable to find sandwiches!")
-    }
 }

@@ -14,7 +14,7 @@ path = "src/main.rs"
 name = "rust_sandwiches"
 
 [workspace]
-members = [".", "migration", "entity"]
+members = [".", "migration", "entity", "infrastructure"]
 
 [dependencies]
 actix-web = "4"
@@ -24,6 +24,7 @@ lexopt = "0.3.0"
 sea-orm = { version = "0.12", features = [ "sqlx-sqlite", "runtime-tokio-native-tls", "macros" ] }
 entity = { path = "entity" }
 migration = { path = "migration" }
+infrastructure = { path = "infrastructure"}
 
 [dev-dependencies]
 reqwest = { version = "0.11" }

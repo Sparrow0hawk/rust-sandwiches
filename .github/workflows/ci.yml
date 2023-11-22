@@ -20,7 +20,7 @@ jobs:
       - name: Run clippy check
         run: cargo clippy
       - name: Run tests
-        run: cargo test
+        run: cargo test --workspace
 
   deploy:
     name: Build and deploy to fly.io
