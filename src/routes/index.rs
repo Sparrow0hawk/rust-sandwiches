@@ -12,7 +12,7 @@ struct IndexTemplate<'a> {
 }
 
 pub async fn index(data: web::Data<DatabaseConnection>) -> impl Responder {
-    let sandwiches = SandwichRepository::get_all(&data).await;
+    let sandwiches = SandwichRepository::new(&data).get_all().await;
     let title = "Rust Sandwiches";
     let template = IndexTemplate { title, sandwiches };
 

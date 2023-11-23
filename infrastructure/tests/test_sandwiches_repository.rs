@@ -28,7 +28,9 @@ async fn test_get_all() -> Result<(), DbErr> {
         .await
         .expect("Could not insert test data");
 
-    let result = SandwichRepository::get_all(&db).await;
+    let repo = SandwichRepository::new(&db);
+
+    let result = repo.get_all().await;
     assert_eq!(result[0].name, "Ham");
 
     Ok(())
