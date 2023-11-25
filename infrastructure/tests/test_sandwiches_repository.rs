@@ -19,7 +19,7 @@ async fn test_get_all() -> Result<(), DbErr> {
 
     let sarnie = sandwich::ActiveModel {
         name: Set("Ham".to_owned()),
-        count: Set(2),
+        amount: Set(2),
         ..Default::default()
     };
 

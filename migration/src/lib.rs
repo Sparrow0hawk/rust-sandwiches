@@ -2,6 +2,7 @@ pub use sea_orm_migration::prelude::*;
 
 mod m20231119_200353_create_sandwiches_table;
 mod m20231119_201322_add_initial_data_to_sandwiches_table;
+mod m20231125_211922_rename_count_column_in_sandwich_table;
 
 pub struct Migrator;
 
@@ -11,6 +12,7 @@ impl MigratorTrait for Migrator {
         vec![
             Box::new(m20231119_200353_create_sandwiches_table::Migration),
             Box::new(m20231119_201322_add_initial_data_to_sandwiches_table::Migration),
+            Box::new(m20231125_211922_rename_count_column_in_sandwich_table::Migration),
         ]
     }
 }
