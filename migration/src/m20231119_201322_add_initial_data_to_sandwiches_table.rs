@@ -9,9 +9,9 @@ impl MigrationTrait for Migration {
         let insert = Query::insert()
             .into_table(Sandwich::Table)
             .columns([Sandwich::Name, Sandwich::Count])
-            .values_panic(["Marmite and Cheese".into(), "10".into()])
-            .values_panic(["Peanut Butter and Jam".into(), "5".into()])
-            .values_panic(["Melty Cheese".into(), "100".into()])
+            .values_panic(["Marmite and Cheese".into(), 10.into()])
+            .values_panic(["Peanut Butter and Jam".into(), 5.into()])
+            .values_panic(["Melty Cheese".into(), 100.into()])
             .to_owned();
         manager.exec_stmt(insert).await?;
         Ok(())
