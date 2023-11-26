@@ -2,3 +2,6 @@
 
 # rustrover
 .idea/
+
+# secrets
+.env

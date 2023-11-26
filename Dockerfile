@@ -17,6 +17,7 @@ USER app
 WORKDIR /app
 # Get compiled binaries from builder's cargo install directory
 COPY --from=builder /usr/src/app/rust_sandwiches /app/rust_sandwiches
+COPY ./.env .
 
 # Run the app
 CMD ./rust_sandwiches --port 8080 --host 0.0.0.0

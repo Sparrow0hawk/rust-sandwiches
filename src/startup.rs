@@ -5,11 +5,14 @@ use crate::routes::{index, not_found};
 use actix_web::dev::Server;
 use actix_web::middleware::Logger;
 use actix_web::{web, App, HttpServer};
+use dotenvy::dotenv;
 use migration::{Migrator, MigratorTrait};
 use sea_orm::Database;
 
 pub async fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
-    let db_url = String::from("sqlite::memory:");
+    dotenv().expect("Unable to load .env file");
+    let db_url =
+        dotenvy::var("DATABASE_URI").expect("Unable to load DATABASE_URI environment variable");
     let db_con = Database::connect(&db_url)
         .await
         .expect("Unable to connect to the database");
