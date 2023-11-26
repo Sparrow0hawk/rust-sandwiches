@@ -8,7 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: EmbarkStudios/cargo-deny-action@v1
-
+        with:
+          command: check bans sources advisories
+          
   ci:
     name: CI
     runs-on: ubuntu-latest
