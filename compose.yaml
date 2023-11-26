@@ -1,0 +1,21 @@
+services:
+
+  app:
+    build: .
+    env_file: .env
+    environment:
+      DATABASE_URI: "postgresql://sandwiches:password@database/sandwiches"
+    ports:
+      - "8080:8080"
+    depends_on:
+      database:
+        condition: service_healthy
+
+  database:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: sandwiches
+      POSTGRES_PASSWORD: password
+    healthcheck:
+      test: pg_isready -U $$POSTGRES_USER
+      interval: 5s
