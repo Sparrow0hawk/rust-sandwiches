@@ -10,9 +10,15 @@ use migration::{Migrator, MigratorTrait};
 use sea_orm::Database;
 
 pub async fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
-    dotenv().expect("Unable to load .env file");
-    let db_url =
-        dotenvy::var("DATABASE_URI").expect("Unable to load DATABASE_URI environment variable");
+    // load dotenv discard result
+    dotenv().ok();
+
+    let db_url = if dotenvy::var("DATABASE_URI").is_ok() {
+        dotenvy::var("DATABASE_URI").unwrap()
+    } else {
+        String::from("sqlite::memory:")
+    };
+
     let db_con = Database::connect(&db_url)
         .await
         .expect("Unable to connect to the database");
