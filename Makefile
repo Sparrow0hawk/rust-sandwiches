@@ -7,7 +7,7 @@ format:
 	cargo fmt
 
 test:
-	cargo test
+	cargo test --workspace
 
 check:
 	cargo check
