@@ -18,11 +18,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: dtolnay/rust-toolchain@stable
       - name: Run cargo check
-        run: cargo check
+        run: make check
       - name: Run clippy check
-        run: cargo clippy
+        run: make clippy
       - name: Run tests
-        run: cargo test --workspace
+        run: make test
 
   deploy:
     name: Build and deploy to fly.io
